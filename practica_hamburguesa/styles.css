@@ -1,0 +1,262 @@
+/*Pseudoclase: Definir el estado de ciertos elementos, asignar variables predefinidas*/
+/*Utilizada para paletas de colores*/
+:root{
+    --color-primario: #ff7b00;
+    --color-secundario: #a26e3e;
+    --blanco: white;
+}
+
+/*Selector universal*/
+*{
+    margin:0;
+    padding: 0;
+    /*Manejar tamaño de cajitas*/
+    box-sizing: border-box;
+}
+
+nav{
+    text-align: center;
+}
+
+nav ul li{
+    /*Los elementos en bloque se ponen en linea*/
+    /*inline-block: se alinean unas a continuación de otras, pero no se respetan los anchos, los altos ni los márgenes verticales de los elementos.*/
+    display: inline-block;
+    list-style: none;
+    margin: 10px; /*1rem = 16px, puede utilizar decimales*/
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: bold;
+}
+
+nav a{
+    margin: .6rem;
+}
+
+.primer-apartado{
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/image1_jcpygh.jpg");
+    width: 100%; /*Preferible usar porcentajes para adaptarse a cualquier pantalla*/
+    height: 400px;
+    background-size: cover;/*Reposiciona la imagen*/
+    background-position: bottom;/*La imagen se posiciona desde abajo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;/*Combina flex-direction(Redirecciona elementos segun filas o columnas) y flex-wrap(organizar elementos para no salir de la cajita)*/
+    clip-path: polygon(0 0,100% 0,100% 80%,0 100% );
+    /*0 0 superior ezquierda, 100 0 superior derecha, 100 80 inferior derecho 0 100 inferior izquierdo*/
+}
+
+.titulo{
+    color: var(--blanco);
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+.subtitulo{
+    color: var(--blanco);
+    font-size: 2rem;
+    letter-spacing: .7rem;
+    font-weight: 500;
+}
+
+.container{
+    width: 80%;
+    margin: auto;/*El navegador adapta el margen*/
+}
+
+.nosotros-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;/*Alinear contenido*/
+    flex-flow: row wrap;/*Los elementos se ponen en fila y se adaptan a la caja*/
+}
+
+.nosotros-imagen{
+    flex: 0 0 400px; /*Combina 3 propiedades: flex-grow(incrementar tamañao del elemento a tamaño del contenedor), flex-shrink(decrementar tamaño del elemento a tamaño del contenedor), flex-basis(definir tamaño final del elemento, tamaño default)*/
+    position: relative; /*Relativa, pase lo que pase el contenedor no se moverá*/
+}
+
+.nosotros-imagen img{
+    width: 100%;
+    height: 300px;
+    margin: 20px;
+    object-fit: cover; /*Imagen se adapta al contenedor*/
+    box-shadow: 0 0 10px 2px; /*La imagen proyecta sombra, asimismo se puede cambiar su color*/
+    flex: 0 0 50%;
+    /*-x -y x y*/
+
+    &:hover{/*Anidas la pseudo-clase hover dentro de la clase imagen, la forma tradicional seria definirla aparte*/
+        transform: scale(1.1);
+        transition: all .2s;
+    }
+}
+.nosotros-parrafo{
+    font-size: 1.5rem;
+    width: 50%;
+}
+
+h2{
+    margin-bottom: 3rem;
+    text-transform: uppercase; /*Por temas de diseño, convertimos encabezados principales en mayúsculas*/
+    text-align: center;
+}
+h4{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 400; /*Pide solo número, no medida*/
+}
+span{
+    color: var(--color-primario);
+}
+
+.nosotros-parrafo p{
+    line-height: 3rem;/*Generar interlineado*/
+    color: #444;
+}
+
+.ofertas-apartado{
+    position: relative;
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/image3_ulstmf.jpg");
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    color: var(--blanco);
+}
+
+.boton{
+    color:var(--blanco);
+    width: 180px;
+    padding: 20px;
+    margin: 1rem;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 10px;
+    font-size: 20px;
+    &:hover{
+        transform: scale(1.1);
+        transition: all .2s;
+    }
+}
+
+.btn-ofertas{
+    background-color: var(--color-secundario);
+}
+
+.boton{
+    background-color: var(--color-primario);
+}
+
+.menu-hamburguesa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.menu-card{
+    width: 30%;
+    height: 300px;
+    box-shadow: 0 0 10px 5px gray;
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.menu-card:nth-child(1){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product1_loak4u.jpg");
+} /*De un elemento padre, se enumera cada elemento hijo*/
+.menu-card:nth-child(2){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/product2_sgcwng.jpg");
+
+}
+.menu-card:nth-child(3){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574753/practicas/hamburguesa/product3_rhoyoi.jpg");
+}
+.menu-card:nth-child(4){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product4_vwkcmh.jpg");
+}
+.menu-card:nth-child(5){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product5_ugbrat.jpg");
+}
+.menu-card:nth-child(6){
+    background-image: url("https://res.cloudinary.com/dmddi5ncx/image/upload/v1720574754/practicas/hamburguesa/product6_f6gyfk.jpg");
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+    background-color: #adadad;
+    opacity: 0;
+}
+
+.menu-card:hover .card{
+    opacity: 1;
+}
+
+h5{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-primario);
+    padding: 10px 0 0 0;/*top rght left bottom*/ /*Si son dos numeros: top-bottom left-right*/
+}
+
+.primer-apartado::before, .ofertas-apartado::before{/*pseudoelemento :: y pseudoclase :*/
+    content: '';/*con el pseudo elemento before siepre lleva contentz*/
+    position: absolute; /*buscamos que el contenedor relativo desde encima tenga un color distinto*/
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.primer-apartado *, .ofertas-apartado *{ /*El asterisco indica que todos los elementos del contenedor aplican estas propiedades*/
+    position: relative;
+}
+
+.espacio{
+    padding: 100px 0;/*un espacio definido para cada sección*/
+}
+
+
+@media(max-width: 768px){
+    .nosotros-container{
+        flex: 0 0 100%;
+    }
+
+    .nosotros-imagen{
+        flex: 0 0 100%;
+    }  
+}
+
+@media(max-width: 576px){
+    /*Se utiliza para sitios web responsivos, hay una escala sm= pequeño md=mediano  */
+    .menu-card{
+        width: 100%;
+    }
+    .titulo{
+        font-size: 2.5rem;
+    }
+
+    .subtitulo{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,121 @@
+/*Estilos generales*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit; /*Excelente para trabajar pseudoelementos*/
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0;/*Aunque tengas normalize, este no lo impide*/
+    padding: 0;
+}
+
+/*Estilos principales*/
+.main{
+    position: relative;
+    min-height: 100vh; /*View high, alto de la vista*/
+    background: radial-gradient(#f0483a,#d10a20);/*Creas una gradiente*/
+    display: flex; /*Normalize te deja usarlo sin problemas*/
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 100px;
+}
+
+.main header{
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /*Es como dar prioridad a tu elemento sobre otros, una colocación enfrente*/
+}
+
+.main header .logo{
+    max-width: 90px;
+}
+
+.main header .navigation{
+    display: flex;
+    list-style-type: none; /*Quitar puntos de lista*/
+    padding-left: 0;
+}
+
+.main header .navigation a{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.main .content{
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .content .text{
+    width: 100%;
+    max-width: 600px;
+}
+
+.main .content .text h2{
+    color: #fff;
+    font-size: 5em;
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 20px 0;
+
+}
+
+.main .content .text h2 span{
+    font-weight: 700;
+}
+
+.main .content .text p{
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.main .content .text .btn{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 50px;/*Es la medida estandar en un botón*/
+    background: #fff;
+    color: #d10a20;
+    font-size: 1.1em;
+    font-weight: 500;
+    border-radius: 40px;
+    transition: 0.25s;
+    &:hover{
+        letter-spacing: 2px;
+    }
+}
+
+.main .content-img{
+    position: relative;/*Se posiciona el contenedor de la imagen de esa forma*/
+}
+
+.main .content-img .imgMuestra{
+    display: block;/*Hace que la img sea elemento del bloque*/
+}
+
+.main .content-img .imgMuestra img{
+    width: 100%;
+    max-width: 600px;
+    height: auto; /*Vuelves la img responsiva, tienes proporcion de aspecto y se adapta al contenedor*/
+}
+

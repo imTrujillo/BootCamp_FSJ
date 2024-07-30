@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Normalize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!--El normalize se coloca antes del css, sino no correrá correctamente-->
+    <!--Te ayuda mucho a mejorar compatibildad entre navegadores-->
+    <style>
+        /*Estilos intencionales*/
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demostrar inconsistencia entre navegadores</h1>
+        <div class="demo-box">
+            <h2>1. Margenes de Elementos</h2>
+            <p>Los margenes predeterminados pueden variar:</p>
+            <ul>
+                <li>Elemento de lista 1</li>
+                <li>Elemento de lista 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="demo-box">
+        <h2>2. Tamaños de fuentes de encabezados</h2>
+        <h1>Encabezados H1</h1>
+        <h2>Encabezados H2</h2>
+        <h3>Encabezados H3</h3>
+    </div>
+
+    <div class="demo-box">
+        <h2>3. Estilos de Enlaces</h2>
+        <a href="#">Este es un enlace normal</a><br>
+        <a href="#" style="color: rgb(43, 20, 255);">Este es un enlace visitado (simulación)</a>
+    </div>
+</body>
+</html>
